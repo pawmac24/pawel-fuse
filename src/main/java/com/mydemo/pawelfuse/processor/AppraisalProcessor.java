@@ -1,8 +1,12 @@
 package com.mydemo.pawelfuse.processor;
 
+import org.apache.camel.LoggingLevel;
+import org.apache.camel.util.CamelLogger;
 import com.mydemo.pawelfuse.model.HouseInfo;
 
 public class AppraisalProcessor {
+	
+	private final CamelLogger logger = new CamelLogger(AppraisalProcessor.class.getCanonicalName(), LoggingLevel.INFO);
 	
 	public HouseInfo quote(HouseInfo houseInfo){
 		int appraisedValue = 0;
@@ -16,5 +20,19 @@ public class AppraisalProcessor {
 		return houseInfo;
 		
 	}
+	
+	
+	public HouseInfo updateQuoteWithSchools(HouseInfo houseInfo, int noSchool){
+		
+		double upPrice = ((110.00+noSchool)/100.00)*houseInfo.getAppraisedValue();
 
+		logger.doLog("Up percent ["+(110+noSchool)/100.00+"]");
+		
+		int appraisedValue = (int) Math.round(upPrice);
+		logger.doLog("This price has gone up from ["+houseInfo.getAppraisedValue()+"] to ["+appraisedValue+"]");
+				
+		houseInfo.setAppraisedValue(appraisedValue);
+		
+		return houseInfo;	
+	}
 }
