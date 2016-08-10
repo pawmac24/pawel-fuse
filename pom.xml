@@ -68,6 +68,11 @@
 
 	<dependencies>
 		<dependency>
+			<groupId>org.ow2.asm</groupId>
+			<artifactId>asm-all</artifactId>
+			<version>4.1</version>
+		</dependency>
+		<dependency>
 			<groupId>org.apache.camel</groupId>
 			<artifactId>camel-core</artifactId>
 			<version>2.15.1.redhat-621084</version>
@@ -132,6 +137,23 @@
 			<artifactId>camel-jackson</artifactId>
 			<version>2.15.1.redhat-621084</version>
 		</dependency>	
+		
+		<!-- Resful Web service with cxf-->
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-cxf</artifactId>
+			<version>2.15.1.redhat-621084</version>
+		</dependency>		
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-jaxrs</artifactId>
+			<version>3.0.4.redhat-621084</version>
+		</dependency>		
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http-jetty</artifactId>
+			<version>3.0.4.redhat-621084</version>
+		</dependency>
 
 		<!-- logging -->
 		<dependency>

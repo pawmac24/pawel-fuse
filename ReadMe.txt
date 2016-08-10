@@ -22,3 +22,6 @@ For more help see the Apache Camel documentation
 //Ewentualnie do generowania plikow z xsd
 
 xjc -d src/main/java -p com.mydemo.pawelfuse.model data/xsd/HouseInfo.xsd data/xsd/CustInfo.xsd
+
+//W przegladarce wpisac adres do restfulowego serwisu np:
+http://localhost:9090/route/summaryservice/customer/A234567
